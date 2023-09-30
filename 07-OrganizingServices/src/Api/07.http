@@ -1,0 +1,16 @@
+@Api_HostAddress = https://localhost:7156
+@Customers_Endpoint = {{Api_HostAddress}}/api/customers
+
+###
+POST {{Customers_Endpoint}}/1/movies
+Content-Type: application/json
+
+1111
+
+###
+GET {{Customers_Endpoint}}
+Accept: application/json
+
+###
+GET {{Customers_Endpoint}}/2
+Accept: application/json

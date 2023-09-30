@@ -1,0 +1,3 @@
+This project contains examples from the Pluralsight course "[Refactoring Anemic Domain Model Towards a Rich One](https://www.pluralsight.com/courses/refactoring-anemic-domain-model)" by Vladimir Khorikov. I updated the code to use .NET 8 and EF Core ORM. Due to discrepancies between EF Core and NHibernate, I have had to fall back upon a couple of internal APIs to keep on course track.
+
+Before running the code, run the included SQL script and adjust a connection string in an appsettings.json of an appropriate example. Each project contains .http file(s). Run them in respective lessons to maintain the DB consistency.

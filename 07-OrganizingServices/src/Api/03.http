@@ -1,0 +1,56 @@
+@Api_HostAddress = https://localhost:7156
+@Customers_Endpoint = {{Api_HostAddress}}/api/customers
+
+### Get all customers
+GET {{Customers_Endpoint}}
+Accept: application/json
+
+### Get the specific customer
+GET {{Customers_Endpoint}}/1
+Accept: application/json
+
+### Add a new customer
+POST {{Customers_Endpoint}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@doe.com"
+}
+
+### Can't add a customer with an already registered e-mail
+POST {{Customers_Endpoint}}
+Content-Type: application/json
+
+{
+  "name": "Email already exists",
+  "email": "james.peterson@gmail.com"
+}
+
+
+### Can't violate the invariants
+POST {{Customers_Endpoint}}
+Content-Type: application/json
+
+{
+  "name": "The user name should not exceed a one hundred characters limit set on the Customer's entity property!",
+  "email": "not.an.email"
+}
+
+### Change the customer's name
+PUT {{Customers_Endpoint}}/7
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "does@not.matter"
+}
+
+### Rent a movie (once per two days)
+POST {{Customers_Endpoint}}/3/movies
+Content-Type: application/json
+
+1
+
+### Try to promote the customer to an advanced status
+POST {{Customers_Endpoint}}/3/promotion

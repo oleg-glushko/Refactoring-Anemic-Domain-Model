@@ -1,0 +1,18 @@
+@Api_HostAddress = https://localhost:7156
+@Customers_Endpoint = {{Api_HostAddress}}/api/customers
+
+###
+GET {{Customers_Endpoint}}
+Accept: application/json
+
+###
+GET {{Customers_Endpoint}}/2
+Accept: application/json
+
+### Change the customer's name
+PUT {{Customers_Endpoint}}/4
+Content-Type: application/json
+
+{
+  "name": "Alan Turing 2"
+}

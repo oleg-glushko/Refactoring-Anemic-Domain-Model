@@ -1,0 +1,40 @@
+@Api_HostAddress = https://localhost:7156
+@Customers_Endpoint = {{Api_HostAddress}}/api/customers
+
+###
+GET {{Customers_Endpoint}}
+Accept: application/json
+
+###
+GET {{Customers_Endpoint}}/2
+Accept: application/json
+
+###
+POST {{Customers_Endpoint}}
+Content-Type: application/json
+
+{
+  "name": "Alan Turing",
+  "email": "the.alan@gmail.com"
+}
+
+
+###
+POST {{Customers_Endpoint}}
+Content-Type: application/json
+
+{
+  "name": "Alan Turing",
+  "email": "the.alan2@gmail.com",
+  "moneySpent": 1000
+}
+
+###
+POST {{Customers_Endpoint}}
+Content-Type: application/json
+
+{
+  "name": "Alan Turing",
+  "email": "the.alan3@gmail.com",
+  "moneySpent": 1000
+}
